@@ -1,13 +1,40 @@
-<!DOCTYLE html>
+<!DOCTYPE html>
 <html>
-<head>
-	<link rel="stylesheet" href="stylesheet.css">
-</head>
+    <head>
+	    <link rel="stylesheet" href="stylesheet.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h1>Recipe Manager</h1>
+            
+        <!--Recipe Input here-->
+        <table>
+            <tr>
+                <td><label for="name">Recipe Name:</label></td>
+                <td><input type="text" name="name" id="recipe-name"></td>
+            </tr>
 
-<body>
+            <tr>
+                <td><label for="ingredients">Ingredients:</label></td>
+                <td><input type="text" name="ingredients" id="ingrs"></td>
+            </tr>
 
-<h1> Hello World </h1>
+            <tr>
+                <td><button type="button" id="add-ing">Add Ingredient</button></td>
+                <td><ul id="ing-list">
+                    <!--Ingredients go here-->
+                </ul></td>
+            </tr>
 
-</body>
+            <tr>
+                <td><label for="instructions">Instructions:</label></td>
+                <td><input type="text" name="instructions" id="insts"></td>
+            </tr>
+        </table>
 
-<html>
+        <button type="button" id="add-btn">Add</button>
+        <ul id="recipe-list">
+            <!--Recipes go here-->
+        </ul>
+    </body>
+</html>

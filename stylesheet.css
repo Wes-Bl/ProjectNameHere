@@ -1,3 +1,12 @@
-h1 {
-   color: blue;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.recipeCont {
+    padding: 2px;
+    border: 2px solid gray;
+}
+
+input {
+    margin: 5px;
 }
