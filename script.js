@@ -22,7 +22,7 @@ function addIngredient(){
 
     //Adds the item to the list
     ingList.innerHTML += "<li>" + ingInput.value + " " +
-    "<button class=\"delete-btn\">&#10006;</button></li>";
+    "<button class=\"delete-btn\">Delete</button></li>";
 
     //Creates the delete button
     let delBtns = document.querySelectorAll(".delete-btn");
@@ -52,13 +52,12 @@ function craftRecipe(){
         instInput.style.setProperty("border-color", "gray");
 
     //Removes the delete button from ingredients
-    //Current not working for apparently no reason
-    let ingredients = ingList.innerHTML.replaceAll("<button class=\"delete-btn\">&#10006;</button>", "")
+    let ingredients = ingList.innerHTML.replaceAll("<button class=\"delete-btn\">Delete</button>", "")
     
     //Adds the item to the list
     recipeList.innerHTML += "<li class=\"recipeCont\">New Recipe: " +
         nameInput.value + " <ul>" + ingredients + "</ul> " + instInput.value +
-        " " + "<button class=\"delete-btn\">&#10006;</button></li>";
+        " " + "<button class=\"delete-btn\">Delete</button></li>";
 
     //Creates the delete button
     let delBtns = document.querySelectorAll(".delete-btn");
@@ -69,7 +68,7 @@ function craftRecipe(){
     });
 
     //Clears the inputs
-    nameInput.value = ingredients;
+    nameInput.value = "";
     ingList.innerHTML = "";
     instInput.value = "";
 }
