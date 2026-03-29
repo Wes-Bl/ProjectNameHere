@@ -1,6 +1,21 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    /*background image here, just placeholder for now.*/
+    background-image: url("assets/Homepage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ffffff;
+    /* Centers body content */   
 }
+
+.recipeManager {
+    
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    margin: 100px 75px 10px 75px;
+    }
 
 .recipeCont {
     padding: 2px;
