@@ -9,6 +9,21 @@ let ingInput = document.getElementById("ingrs");
 let instInput = document.getElementById("insts");
 
 let recipes =[];
+//saves recipes as json
+function saveRecipes() {
+    localStorage.setItem("recipes", JSON.stringify(recipes));
+}
+
+function loadRecipes() {
+    let stored = localStorage.getItem("recipes");
+
+    if (stored) {
+        recipes = JSON.parse(stored);
+    } else {
+        recipes = [];
+    }
+}
+
 let currentIngredients =[];
 
 ingBtn.addEventListener("click", addIngredient);
@@ -98,6 +113,7 @@ function addRecipe() {
     };
 
     recipes.push(recipe);
+    saveRecipes();
     console.log(recipes);
 
     currentIngredients = [];
@@ -151,5 +167,10 @@ function renderRecipes() {
 //delete recipes functionality
 function deleteRecipe(index) {
     recipes.splice(index, 1);
+    saveRecipes();
     renderRecipes();
 }
+
+//shows recipes in storage on launch
+loadRecipes();
+renderRecipes();
