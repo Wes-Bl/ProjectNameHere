@@ -2,27 +2,12 @@ let addBtn = document.getElementById("add-btn");
 let ingBtn = document.getElementById("add-ing");
 
 let ingList = document.getElementById("ing-list");
-let recipeList = document.getElementById("recipe-list");
 
 let nameInput = document.getElementById("recipe-name");
 let ingInput = document.getElementById("ingrs");
 let instInput = document.getElementById("insts");
 
-let recipes =[];
-//saves recipes as json
-function saveRecipes() {
-    localStorage.setItem("recipes", JSON.stringify(recipes));
-}
 
-function loadRecipes() {
-    let stored = localStorage.getItem("recipes");
-
-    if (stored) {
-        recipes = JSON.parse(stored);
-    } else {
-        recipes = [];
-    }
-}
 
 let currentIngredients =[];
 
@@ -59,22 +44,30 @@ function addIngredient() {
 
 // dislays array info on page
 function renderIngredients() {
-    //clears old ingredients from ul to prevent dupes
+    // Reset display: clear existing list to avoid duplicates
     ingList.innerHTML = "";
-    //creates list in memory then displays
+
+    // Loop through all current ingredients
     for (let i = 0; i < currentIngredients.length; i++) {
+
+        // Create list item and assign ingredient text
         let li = document.createElement("li");
         li.textContent = currentIngredients[i];
-        ingList.appendChild(li);
-        //adds delete button
+
+        // Create delete button and attach behavior
         let deleteBtn = document.createElement("button");
         deleteBtn.textContent = "X";
         deleteBtn.classList.add("delete-btn");
+
+        // When clicked, remove this ingredient from the array
         deleteBtn.addEventListener("click", function() {
             deleteIngredient(i);
         });
 
+        // Assemble element: attach button to list item
         li.appendChild(deleteBtn);
+
+        // Render element: add completed list item to the page
         ingList.appendChild(li);
     }
 }
@@ -123,54 +116,12 @@ function addRecipe() {
     instInput.value = "";
     ingInput.style.borderColor = "gray";
     //shows new recipes
-    renderRecipes();
+   
 }
 
-function renderRecipes() {
-    recipeList.innerHTML = "";
-    //assigns each recipe to variable 
-    for (let i = 0; i < recipes.length; i++) {
-        let recipe = recipes[i];
-        //creates container for recipe and applies css
-        let li = document.createElement("li");
-        li.classList.add("recipeCont");
-        //puts title as header
-        let title = document.createElement("h3");
-        title.textContent = recipe.name;
-        //add paragraph with instructions
-        let ingUl = document.createElement("ul");
-        for (let j = 0; j < recipe.ingredients.length; j++) {
-            let ingLi = document.createElement("li");
-            ingLi.textContent = recipe.ingredients[j];
-            ingUl.appendChild(ingLi);
-        }
 
-        let instructions = document.createElement("p");
-        instructions.textContent = recipe.instructions;
-        //adds delete button
-                let deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "X";
-        deleteBtn.classList.add("delete-btn");
-        deleteBtn.addEventListener("click", function() {
-            deleteRecipe(i);
-        });
-        //puts everything in recipe container
-        li.appendChild(title);
-        li.appendChild(ingUl);
-        li.appendChild(instructions);
-        li.appendChild(deleteBtn);
-        //adds to list
-        recipeList.appendChild(li);
-    }
-}
 
-//delete recipes functionality
-function deleteRecipe(index) {
-    recipes.splice(index, 1);
-    saveRecipes();
-    renderRecipes();
-}
 
-//shows recipes in storage on launch
-loadRecipes();
-renderRecipes();
+
+
+

@@ -4,22 +4,33 @@
         <link rel="stylesheet" href="stylesheet.css">
         <title>My Recipes</title>
     </head>
-    <body>
-        
-        <nav class="navbar">
-            <a href="index.html"class="navbtn">Home</a>
-            <a href="Account.html"class="navbtn">Account</a>
-            <a href="Browse.html" class="navbtn">Browse Recipes</a>
-            <a href="MyRecipes.html" class="navbtn">My Recipes</a>
-            <a href="RecipeManager.html" class="navbtn">Create Recipe</a>
-        </nav>
+<body>
 
-        <h1>My Recipes</h1>
-        <ul>
-            <li>Recipe 1</li>
-            <li>Recipe 2</li>
-            <li>Recipe 3</li>
-            <li>Yada Yada etc.</li>
-        </ul>
-    </body>
+    <nav class="navbar">
+        <a href="index.html" class="navbtn">Home</a>
+        <a href="Account.html" class="navbtn">Account</a>
+        <a href="Browse.html" class="navbtn">Browse Recipes</a>
+        <a href="MyRecipes.html" class="navbtn">My Recipes</a>
+        <a href="RecipeManager.html" class="navbtn">Create Recipe</a>
+    </nav>
+
+    <h1>My Recipes</h1>
+
+    <table id="recipeTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Ingredients</th>
+                <th>Instructions</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="js/script.js"></script>
+    <script src="js/MyRecipes.js"></script>
+
+</body>
 </html>
