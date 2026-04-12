@@ -26,3 +26,12 @@ body {
 input {
     margin: 5px;
 }
+
+button {
+    margin: 5px;
+    padding: 5px;
+    background-color:red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
