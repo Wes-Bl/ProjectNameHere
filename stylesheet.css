@@ -73,3 +73,10 @@ button {
     background-color: #555555;
     color: white;
 }
+
+#add-btn {
+    background-color: green;
+}
+#add-ing {
+    background-color: green;
+}

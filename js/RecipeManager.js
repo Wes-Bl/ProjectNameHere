@@ -88,14 +88,14 @@ function addRecipe() {
     nameInput.style.borderColor = "gray";
 
     if (instInput.value.trim() === "") {
-        instInput.style.borderColor = "red";
+        instInput.style.borderColor = "gray";
         return;
     }
     // makes sure there are ingredients before recipe is saved, similiar color changes
     instInput.style.borderColor = "gray";
 
     if (currentIngredients.length === 0) {
-        ingInput.style.borderColor = "red";
+        ingInput.style.borderColor = "gray";
         return;
     }
     //
@@ -107,6 +107,8 @@ function addRecipe() {
 
     recipes.push(recipe);
     saveRecipes();
+
+    window.location.href = "MyRecipes.html";
     console.log(recipes);
 
     currentIngredients = [];
