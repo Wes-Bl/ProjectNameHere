@@ -77,6 +77,11 @@ button {
     color: white;
 }
 
+.add-btn {
+    background-color: green;
+    color: white;
+}
+
 #add-btn {
     background-color: green;
 }

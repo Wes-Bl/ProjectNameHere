@@ -1,12 +1,20 @@
 // Fetch recipes from server
 async function fetchServerRecipes() {
     try {
+        // tries the Node server first
         const res = await fetch("http://localhost:3000/recipes");
-        const data = await res.json();
-        return data;
+        return await res.json();
     } catch (error) {
-        console.error("Failed to fetch from server:", error);
-        return []; // fallback if server is off
+        console.warn("Server not available, loading local JSON");
+
+        try {
+            // fallback to local file
+            const res = await fetch("recipes.json");
+            return await res.json();
+        } catch (err) {
+            console.error("Failed to load local JSON:", err);
+            return [];
+        }
     }
 }
 
@@ -22,13 +30,24 @@ async function renderBrowseRecipes() {
         const row = document.createElement("tr");
 
         row.innerHTML = `
-            <td>${recipe.name}</td>
-            <td>${recipe.ingredients.join(", ")}</td>
-            <td>${recipe.instructions}</td>
-            <td>
-                <button class="add-btn">Add</button>
-            </td>
-        `;
+    <td class="recipeCont">${recipe.name}</td>
+    <td class="recipeCont"><ul></ul></td>
+`;
+
+// build ingredient list
+const ingredients = recipe.ingredients || [];
+
+for (let i = 0; i < ingredients.length; i++) {
+    row.innerHTML = row.innerHTML.substring(0, row.innerHTML.indexOf("</ul>"))
+        + `<li>${ingredients[i]}</li>` + "</ul></td>";
+}
+
+row.innerHTML += `
+    <td class="recipeCont" width="400">${recipe.instructions}</td>
+    <td>
+        <button class="add-btn">Add</button>
+    </td>
+`;
 
         // Add to My Recipes button
         row.querySelector(".add-btn").addEventListener("click", () => {
