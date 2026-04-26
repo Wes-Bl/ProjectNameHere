@@ -10,9 +10,16 @@ function renderRecipes() {
         const row = document.createElement("tr");
 
         row.innerHTML = `
-            <td>${recipe.name}</td>
-            <td>${recipe.ingredients.join(", ")}</td>
-            <td>${recipe.instructions}</td>
+            <td class=\"recipeCont\">${recipe.name}</td>
+            <td class=\"recipeCont\"><ul></ul></td>`;
+            
+            for(let i = 0; i < recipe.ingredients.length; i++){
+                row.innerHTML = row.innerHTML.substring(0, row.innerHTML.indexOf("</ul>"))
+                 + `<li>${recipe.ingredients[i]}</li>` + "</ul></td>";
+            }
+    
+        row.innerHTML += `
+            <td class=\"recipeCont\" width=\"400\">${recipe.instructions}</td>
             <td>
                 <button onclick="deleteRecipe(${index})">X</button>
             </td>
