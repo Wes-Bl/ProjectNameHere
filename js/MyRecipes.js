@@ -2,7 +2,8 @@
 
 
 //shows recipes user has created
-function renderRecipes() {
+async function renderRecipes() {
+    const recipes = await getRecipes();
     const tableBody = document.querySelector("#recipeTable tbody");
     tableBody.innerHTML = "";
 
@@ -26,7 +27,7 @@ function renderRecipes() {
 function deleteRecipe(index) {
     if (confirm("Delete this recipe?")) {
         recipes.splice(index, 1);
-        saveRecipes();
+        deleteRecipeFromStorage(index);
         renderRecipes();
     }
 }

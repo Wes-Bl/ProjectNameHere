@@ -100,13 +100,13 @@ function addRecipe() {
     }
     //
     let recipe = {
+        id: Date.now(),
         name: nameInput.value.trim(),
         ingredients: [...currentIngredients],
         instructions: instInput.value.trim()
     };
 
-    recipes.push(recipe);
-    saveRecipes();
+    addRecipeToStorage(recipe);
 
     window.location.href = "MyRecipes.html";
     console.log(recipes);
