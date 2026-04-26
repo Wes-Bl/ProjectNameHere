@@ -17,8 +17,22 @@
         <label for="search">Search:</label>
         <input type="text" name="search" id="searchBox">
 
-        <ul>
-            <li>Recipes etc.</li>
-        </ul>
+            <table id="browseTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Ingredients</th>
+                <th>Instructions</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- JS will insert rows here -->
+        </tbody>
+    </table>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/browse.js"></script>
     </body>
 </html>

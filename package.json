@@ -1,0 +1,25 @@
+{
+  "name": "projectnamehere",
+  "version": "1.0.0",
+  "description": "CSCI 3000 group project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wes-Bl/ProjectNameHere.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Wes-Bl/ProjectNameHere/issues"
+  },
+  "homepage": "https://github.com/Wes-Bl/ProjectNameHere#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
