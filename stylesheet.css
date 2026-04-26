@@ -36,28 +36,26 @@ button {
     cursor: pointer;
 }
 
+
+
 .navbar{
     padding: 15px 15px;
     text-decoration: none;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     display: flex;
-    justify-content: normal;
-    align-items: stretch;
-    background: yellow;
-    width: 175px;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgb(175 131 9);
+    width: 100%;
     height: 100%;
-    position: static;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin: 10px, 0;
 }
 
-
 .navbtn{
-    background-color: #8B0000;
+    background-color: #e0c650;
     border: 4px solid #000000;
-    color: white;
+    color: #000000;
     text-align: center;
     font-size: fit-content;
     cursor: pointer;
@@ -79,4 +77,25 @@ button {
 }
 #add-ing {
     background-color: green;
+}
+/* Media Query for Mobile Devices. If screen width 750 < px, then do column.*/
+@media (max-width: 750px) {
+    .navbar {
+        flex-direction: column;
+        width: 175px;
+        height: 100%;
+        align-items: stretch;
+    }
+    .navbtn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .recipeManager {
+        margin: 20px 15px;
+    }
+
+
+
+
 }
