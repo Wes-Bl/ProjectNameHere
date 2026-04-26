@@ -11,10 +11,15 @@ body {
 .recipeManager {
     
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 100px 75px 10px 75px;
+    margin: 100px auto 10px auto;
+    border: 2px solid gray;
+    border-radius: 12px;
+    padding: 20px;
+    width: fit-content;
+    background-color: #e0c650;
     }
 
 .recipeCont {
@@ -78,13 +83,18 @@ button {
 #add-ing {
     background-color: green;
 }
-/* Media Query for Mobile Devices. If screen width 750 < px, then do column.*/
-@media (max-width: 750px) {
+
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+/* Media Query for Mobile Devices. If screen width 900 < px, then do column.*/
+@media (max-width: 900px) {
     .navbar {
         flex-direction: column;
         width: 175px;
-        height: 100%;
-        align-items: stretch;
+        min-height: 100vh;
+        flex-shrink: 0;
     }
     .navbtn {
         width: 100%;
@@ -94,7 +104,11 @@ button {
     .recipeManager {
         margin: 20px 15px;
     }
-
+    .layout {
+        /*content layout on mobile*/
+        flex-direction: row;
+        align-items: flex-start;
+    }
 
 
 
