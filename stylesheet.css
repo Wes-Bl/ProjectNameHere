@@ -94,7 +94,7 @@ button {
     display: flex;
     flex-direction: column;
 }
-.myRecipes {
+.contentBox {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,9 +128,10 @@ button {
         flex-direction: row;
         align-items: flex-start;
     }
-    .myRecipes {
+    .contentBox {
         margin: 20px 15px;
         box-sizing: border-box;
+        
 
     }
 

@@ -12,12 +12,40 @@
             <a href="MyRecipes.html" class="navbtn">My Recipes</a>
             <a href="RecipeManager.html" class="navbtn">Create Recipe</a>
         </nav>
+<div class="contentBox">
+<button id="rickroll-btn" onclick="rickRoll()">Create Account</button>
+
+<p id="rickroll-msg" style="font-size:13px;color:gray;min-height:20px;"></p>
+
+<script>
+const lines = [
+  "we're no strangers to love...",
+  "you know the rules...",
+  "and so do i...",
+  "never gonna give you up!",
+];
+let clicked = 0;
+
+function rickRoll() {
+  const msg = document.getElementById('rickroll-msg');
+  const btn = document.getElementById('rickroll-btn');
+  if (clicked < lines.length - 1) {
+    msg.textContent = lines[clicked];
+    clicked++;
+  } else {
+    msg.textContent = lines[lines.length - 1];
+    btn.textContent = "Okay Create Account For Real This Time";
+    btn.onclick = () => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+  }
+}
+</script>
 
         <h1>My Account</h1>
         <h2>--Account Name Here--</h2>
         <p>Date Created: Tomorrow</p>
         <p>Number of recipes: -1</p>
-        <p>Gay: Yes, unless your mom walks in</p>
+        
         
     </body>
+    </div>
 </html>
