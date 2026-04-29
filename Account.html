@@ -19,24 +19,24 @@
 
 <script>
 const lines = [
-  "we're no strangers to love...",
-  "you know the rules...",
-  "and so do i...",
-  "never gonna give you up!",
+"we're no strangers to love...",
+"you know the rules...",
+"and so do i...",
+"never gonna give you up!",
 ];
 let clicked = 0;
 
 function rickRoll() {
-  const msg = document.getElementById('rickroll-msg');
-  const btn = document.getElementById('rickroll-btn');
-  if (clicked < lines.length - 1) {
+const msg = document.getElementById('rickroll-msg');
+const btn = document.getElementById('rickroll-btn');
+if (clicked < lines.length - 1) {
     msg.textContent = lines[clicked];
     clicked++;
-  } else {
+} else {
     msg.textContent = lines[lines.length - 1];
     btn.textContent = "Okay Create Account For Real This Time";
     btn.onclick = () => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
-  }
+}
 }
 </script>
 
